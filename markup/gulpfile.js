@@ -33,7 +33,7 @@ gulp.task('browser-sync', function() {
 			baseDir: "./"
 		}
 	});
-	gulp.watch('js/*.js', ['scripts']);
+	gulp.watch('js/*.js').on('change', browserSync.reload);
 	gulp.watch('scss/**/*.scss', ['sass']);
 	gulp.watch('sourceimages/*', ['imagemin']);
 	gulp.watch("*.html").on('change', browserSync.reload);
